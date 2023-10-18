@@ -1,9 +1,8 @@
-/* Components */
 // import { Counter } from "./components/Counter/Counter";
 
 export default function IndexPage() {
   // return <Counter />
-  return <div>main123</div>;
+  return <div>main</div>;
 }
 
 export const metadata = {

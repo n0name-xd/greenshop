@@ -1,17 +1,18 @@
-/* Components */
 import { Providers } from "@/src/lib/providers";
 // import { Nav } from "./components/Nav";
 
-/* Instruments */
-import styles from "../styles/layout.module.css";
-import "../styles/globals.scss";
+import { Footer } from "../components/Footer/Footer";
+import { Header } from "../components/Header/Header";
+import "../styles/main.scss";
 
 export default function RootLayout(props: React.PropsWithChildren) {
   return (
     <Providers>
-      <html lang="en">
+      <html className="wrapper" lang="en">
         <body>
-          <main className={styles.main}>{props.children}</main>
+          <Header />
+          <main>{props.children}</main>
+          <Footer />
           {/* <section className={styles.container}>
             <Nav />
 

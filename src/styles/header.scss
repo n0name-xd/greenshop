@@ -1,0 +1,16 @@
+@import "./variables.scss";
+
+header {
+  height: 78px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border-bottom: 0.3px solid rgba(70, 163, 88, 0.5);
+
+  & .footer__container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
