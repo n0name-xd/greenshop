@@ -1,13 +1,10 @@
 "use client";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 
 export const Nav = (): JSX.Element => {
   const pathname = usePathname();
-  const [page, setPage] = useState<any>("");
 
-  useEffect(() => {}, []);
   return (
     <nav>
       <ul>

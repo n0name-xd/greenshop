@@ -62,4 +62,18 @@ header {
       height: 100%;
     }
   }
+
+  & .control-panele {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    & .control-panele__search,
+    .control-panele__basket {
+      border: none;
+      background: none;
+      cursor: pointer;
+      width: min-content;
+    }
+  }
 }
