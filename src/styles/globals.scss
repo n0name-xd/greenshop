@@ -1,3 +1,47 @@
+@font-face {
+  font-family: "Cera Pro";
+  src: url("../styles/fonts/Cera-Pro/Cera-Pro-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Cera Pro";
+  src: url("../styles/fonts/Cera-Pro/Cera-Pro-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Cera Pro";
+  src: url("../styles/fonts/Cera-Pro/Cera-Pro-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+
+// @font-face {
+//   font-family: "Cera Pro";
+//   src: url("../styles/fonts/Cera-Pro/Cera-Pro-Black.woff2") format("woff2");
+//   font-weight: 400;
+//   font-style: normal;
+// }
+
+// @font-face {
+//   font-family: "Cera Pro";
+//   src: url("../styles/fonts/Cera-Pro/Cera-Pro-Black-Italic.woff2")
+//     format("woff2");
+//   font-weight: 400;
+//   font-style: italic;
+// }
+
+// @font-face {
+//   font-family: "Cera Pro";
+//   src: url("../styles/fonts/Cera-Pro/Cera-Pro-Regular-Italic.woff2")
+//     format("woff2");
+//   font-weight: 500;
+//   font-style: italic;
+// }
+
 html {
   background: white;
   height: 100%;
@@ -6,6 +50,9 @@ html {
 * {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
+  font-family: "Cera Pro";
+  font-style: normal;
 }
 
 .wrapper {
@@ -25,6 +72,15 @@ main {
 }
 footer {
   flex: 0 0 auto;
+}
+
+.noselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 // html,

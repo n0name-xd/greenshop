@@ -1,11 +1,11 @@
 import { Providers } from "@/src/lib/providers";
-// import { Nav } from "./components/Nav";
-
 import { Footer } from "../components/Footer/Footer";
 import { Header } from "../components/Header/Header";
 import "../styles/main.scss";
 
-export default function RootLayout(props: React.PropsWithChildren) {
+export default function RootLayout(
+  props: React.PropsWithChildren
+): JSX.Element {
   return (
     <Providers>
       <html className="wrapper" lang="en">
@@ -15,12 +15,6 @@ export default function RootLayout(props: React.PropsWithChildren) {
           <Footer />
           {/* <section className={styles.container}>
             <Nav />
-
-            <header className={styles.header}>
-              <img src="/logo.svg" className={styles.logo} alt="logo" />
-            </header>
-
-            <main className={styles.main}>{props.children}</main>
 
             <footer className={styles.footer}>
               <span>Learn </span>
