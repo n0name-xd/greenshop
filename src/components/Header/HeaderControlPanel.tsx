@@ -9,6 +9,7 @@ export const HeaderControlPanel = (): JSX.Element => {
           alt="search"
           width={20}
           height={20}
+          priority
         />
       </button>
       <button className="control-panele__basket noselect">
@@ -17,6 +18,7 @@ export const HeaderControlPanel = (): JSX.Element => {
           alt="search"
           width={24}
           height={24}
+          priority
         />
         <span className="basket-count noselect">6</span>
       </button>

@@ -8,7 +8,13 @@ export const Header = (): JSX.Element => {
     <header>
       <div className="header__container">
         <Link className="noselect" href="/">
-          <Image src="Logo.svg" alt="logo" width={150} height={34.3} />
+          <Image
+            src="Logo.svg"
+            alt="logo"
+            width={150}
+            height={34.3}
+            priority={true}
+          />
         </Link>
         <Nav />
         <HeaderControlPanel />

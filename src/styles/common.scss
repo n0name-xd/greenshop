@@ -1,3 +1,5 @@
+@import "./variables.scss";
+
 .noselect {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -5,4 +7,16 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+
+.custom-button {
+  border-radius: 6px;
+  background: $color_green;
+  border: none;
+  color: $color_white;
+  padding: 11px 27px 9px 26px;
+  cursor: pointer;
+  text-decoration: none;
+  display: block;
+  width: max-content;
 }

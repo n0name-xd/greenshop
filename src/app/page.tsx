@@ -1,14 +1,12 @@
 // import { Counter } from "./components/Counter/Counter";
 
-const SliderMain = (): JSX.Element => {
-  return <div className="slider">slider</div>;
-};
+import { MainSlider } from "../components/sliders/MainSlider";
 
 export default function IndexPage() {
   // return <Counter />
   return (
     <div>
-      <SliderMain />
+      <MainSlider />
     </div>
   );
 }
