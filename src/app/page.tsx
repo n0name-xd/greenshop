@@ -1,10 +1,14 @@
 // import { Counter } from "./components/Counter/Counter";
 
+const SliderMain = (): JSX.Element => {
+  return <>slider</>;
+};
+
 export default function IndexPage() {
   // return <Counter />
-  return <div>main</div>;
+  return (
+    <div>
+      <SliderMain />
+    </div>
+  );
 }
-
-export const metadata = {
-  title: "Green Shop",
-};

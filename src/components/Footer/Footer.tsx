@@ -1,5 +1,3 @@
 export const Footer = () => {
-  return (
-    <footer style={{ height: "100px", border: "1px solid red" }}>footer</footer>
-  );
+  return <footer style={{ height: "100px" }}>footer</footer>;
 };
