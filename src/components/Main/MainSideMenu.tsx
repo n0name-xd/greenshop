@@ -111,7 +111,13 @@ export const MainSideMenu = (): JSX.Element => {
           <ul>{sizeList}</ul>
         </div>
       </div>
-      <Image alt="super sale" src="/main/sale.webp" width={310} height={410} />
+      <Image
+        alt="super sale"
+        src="/main/sale.webp"
+        width={310}
+        height={410}
+        priority
+      />
     </div>
   );
 };

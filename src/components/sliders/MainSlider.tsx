@@ -17,8 +17,8 @@ export const MainSlider = (): JSX.Element => {
 
   const sliderListData = [
     "/slider/one.webp",
-    "/slider/two.webp",
     "/slider/three.webp",
+    "/slider/one.webp",
   ];
 
   const sliderList = sliderListData.map((el: string): JSX.Element => {
