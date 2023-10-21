@@ -99,3 +99,19 @@
 .slider-content a {
   margin-top: 44px;
 }
+
+.main-content {
+  width: 100%;
+  padding: 46px 0 0 0;
+  display: flex;
+
+  .main-content__side-menu {
+    width: 310px;
+    border: 1px solid black;
+  }
+
+  .main-content__content {
+    width: 100%;
+    border: 1px solid black;
+  }
+}

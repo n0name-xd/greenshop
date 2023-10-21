@@ -15,13 +15,17 @@ export const MainSlider = (): JSX.Element => {
     appendDots: (dots: any) => <ul className="test">{dots}</ul>,
   };
 
-  const sliderListData = ["Logo.svg", "Logo.svg", "/slider/1.jpeg"];
+  const sliderListData = [
+    "/slider/one.webp",
+    "/slider/two.webp",
+    "/slider/three.webp",
+  ];
 
   const sliderList = sliderListData.map((el: string): JSX.Element => {
     return (
       <div key={el} className="slider-item">
         <Image
-          src={""}
+          src={el}
           alt="slide"
           width={1200}
           height={450}
