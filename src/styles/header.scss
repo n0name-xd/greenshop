@@ -2,6 +2,8 @@
 
 header {
   height: 78px;
+  min-height: 78px;
+  max-height: 78px;
   width: 100%;
   display: flex;
   align-items: center;

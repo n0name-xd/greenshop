@@ -38,19 +38,22 @@ export const MainSideMenu = (): JSX.Element => {
     },
   ];
 
-  const categoryList = categories.map((el: { name: string; count: number }) => {
-    return (
-      <li key={el.name} className="">
-        1
-      </li>
-    );
-  });
+  const categoryList = categories.map(
+    (el: { name: string; count: number }, index: number) => {
+      return (
+        <li className={`${index === 0 ? "active" : ""}`} key={el.name}>
+          <div>{el.name}</div>
+          <div>({el.count})</div>
+        </li>
+      );
+    }
+  );
+
   return (
     <div className="main-content__side-menu">
       <h3>Categories</h3>
-      <ul>
-        <li></li>
-      </ul>
+      <ul>{categoryList}</ul>
+      <h3 className="side-menu__range-title">Price Range</h3>
     </div>
   );
 };
