@@ -35,8 +35,6 @@
     margin: 0;
     padding: 1rem 0;
 
-    list-style-type: none;
-
     li {
       margin: 0 0.25rem;
     }
@@ -104,10 +102,19 @@
   width: 100%;
   padding: 46px 0 0 0;
   display: flex;
+  gap: 50px;
 
   .main-content__side-menu {
     width: 310px;
-    border: 1px solid black;
+    background: $color_white_gray;
+    padding: 14px 24px 0px 18px;
+
+    & h3 {
+      color: $color_black;
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 16px;
+    }
   }
 
   .main-content__content {
