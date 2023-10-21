@@ -103,47 +103,85 @@
   padding: 46px 0 0 0;
   display: flex;
   gap: 50px;
+}
 
-  .main-content__side-menu {
-    width: 310px;
-    background: $color_white_gray;
-    padding: 14px 24px 0px 18px;
+.main-content__side-menu {
+  width: 310px;
+  background: $color_white_gray;
 
-    & ul {
-      margin-top: 7px;
-      margin-left: 12px;
-    }
-
-    & h3 {
-      color: $color_black;
-      font-size: 18px;
-      font-weight: 700;
-      line-height: 16px;
-    }
-
-    & li {
-      color: $color_black;
-      font-size: 15px;
-      font-weight: 400;
-      line-height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      cursor: pointer;
-    }
-
-    & li.active {
-      color: $color_green;
-      font-weight: 700;
-    }
+  & .side-menu__control-panel {
+    padding: 14px 24px 19px 18px;
   }
 
-  & .side-menu__range-title {
+  & .side-menu__control-panel h3 {
+    color: $color_black;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 16px;
+  }
+
+  & .side-menu__price-range {
     margin-top: 36px;
   }
 
-  .main-content__content {
-    width: 100%;
-    border: 1px solid black;
+  & .side-menu__size {
+    margin-top: 46px;
   }
+
+  & ul {
+    margin-top: 7px;
+    margin-left: 12px;
+  }
+
+  & li {
+    color: $color_black;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+  }
+
+  & li.active {
+    color: $color_green;
+    font-weight: 700;
+  }
+
+  & .price-range-container {
+    margin: 20px 42px 0 12px;
+  }
+
+  & .rc-slider-rail {
+    background: rgba(70, 163, 88, 0.2);
+  }
+
+  & .rc-slider-track,
+  .rc-slider-tracks {
+    background: $color_green;
+  }
+
+  & .rc-slider-handle {
+    background-color: $color_green;
+    border: solid 2px $color_white;
+  }
+
+  & .price-range__value {
+    margin: 15px 0 16px 0;
+    color: $color_black;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 16px;
+  }
+
+  & .price-range__value span {
+    color: $color_green;
+    font-weight: 700;
+  }
+}
+
+.main-content__content {
+  width: 100%;
+  border: 1px solid red;
 }

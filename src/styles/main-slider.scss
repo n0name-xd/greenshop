@@ -13,9 +13,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 .slick-loading .slick-list {
-  background: url("") center center no-repeat #fff;
-  //   background-repeat: no-repeat;
-  //   background-position: center;
+  // background: url("") center center no-repeat #fff;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: $color_white_gray;
 }
 // @font-face {
 //     font-family: slick;
