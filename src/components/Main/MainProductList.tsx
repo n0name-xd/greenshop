@@ -51,7 +51,7 @@ const productsList = [
     id: 3,
     title: "African Violet",
     imgSrc: "/main-carts/barberton-daisy.webp",
-    price: 199,
+    price: 229,
     size: "large",
     categories: "Small Plants",
     discount: {
@@ -64,6 +64,7 @@ const productsList = [
 export const MainProductList = (): JSX.Element => {
   const cartList = productsList.map((el: IProduct) => {
     const [isSshow, setIsShow] = useState<boolean>(false);
+
     const showModal = () => {
       setIsShow(true);
     };
@@ -71,6 +72,11 @@ export const MainProductList = (): JSX.Element => {
     const hideModal = () => {
       setIsShow(false);
     };
+
+    const price = el.discount.isDiscount
+      ? Math.floor(el.price - el.discount.percent! * (el.price / 100))
+      : el.price;
+
     return (
       <div
         onMouseOver={showModal}
@@ -87,7 +93,13 @@ export const MainProductList = (): JSX.Element => {
           ></div>
         </div>
         <div className="card-item__title">{el.title}</div>
-        <span>${el.price}.00</span>
+        <span>${price}.00</span>
+        {el.discount.isDiscount ? (
+          <span className="card-item-cost-before">${el.price}</span>
+        ) : null}
+        {el.discount.isDiscount ? (
+          <div className="card-item__discount-table">13% OFF</div>
+        ) : null}
         {isSshow ? (
           <div className="card-item__hover-buttons">
             <div>

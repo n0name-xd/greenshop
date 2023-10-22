@@ -282,4 +282,25 @@
     display: flex;
     align-items: center;
   }
+
+  span.card-item-cost-before {
+    color: $color_gray2;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 16px;
+    margin-left: 16px;
+    text-decoration: line-through;
+  }
+
+  .card-item__discount-table {
+    position: absolute;
+    padding: 7px 8px 6px 9px;
+    background: $color_green;
+    color: $color_white;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 16px;
+    top: 14px;
+    left: 0;
+  }
 }
