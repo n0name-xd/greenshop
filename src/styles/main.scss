@@ -221,15 +221,65 @@
     display: flex;
     align-items: center;
     gap: 5px;
+    margin-right: 10px;
   }
 
   & .main-content__card-list {
     width: 100%;
     padding: 31px 0 0 0;
     display: grid;
-    grid-template-columns: repeat(3, 33%);
+    grid-template-columns: repeat(3, 30%);
+    gap: 37px;
   }
 
   & .main-content__card-item {
+    width: 258px;
+    position: relative;
+  }
+
+  & .card-item__img-container {
+    width: 258px;
+    height: 300px;
+    flex-shrink: 0;
+    background: $color_white_gray;
+  }
+
+  & .card-item__img-item {
+    width: 250px;
+    height: 250px;
+    flex-shrink: 0;
+    mix-blend-mode: multiply;
+  }
+
+  & .card-item__title {
+    margin-top: 12px;
+  }
+
+  & .main-content__card-item span {
+    color: $color_green;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 16px;
+    margin-top: 6px;
+  }
+
+  & .card-item__hover-buttons {
+    position: absolute;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    background: $color_white_gray;
+    width: 125px;
+    bottom: 74px;
+    left: calc(50% - (125px / 2));
+  }
+
+  & .card-item__hover-buttons div {
+    height: 35px;
+    background: $color_white;
+    padding: 8px 6px 7px 6px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
   }
 }
