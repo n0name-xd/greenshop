@@ -20,6 +20,13 @@ export const Blog = (): JSX.Element => {
             height={15}
           />
         </button>
+        <Image
+          className="main-blog_plant-one"
+          alt="plant"
+          src="/main/plant1.png"
+          width={292}
+          height={292}
+        />
       </div>
       <div>
         <h3>
@@ -38,6 +45,13 @@ export const Blog = (): JSX.Element => {
             height={15}
           />
         </button>
+        <Image
+          className="main-blog_plant-two"
+          alt="plant"
+          src="/main/plant2.png"
+          width={292}
+          height={292}
+        />
       </div>
     </div>
   );
