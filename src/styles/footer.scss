@@ -21,4 +21,131 @@ footer {
     line-height: 30px;
     text-align: center;
   }
+
+  & .footer__top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0;
+    padding: 31px 25px 24px 23px;
+  }
+
+  & h4 {
+    color: $color_black;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 16px;
+  }
+
+  & .footer__top .newsletters {
+    margin-top: 6px;
+    max-width: 354px;
+  }
+
+  & .newsletters__input {
+    margin: 18px 0 17px 0;
+    width: 100%;
+  }
+
+  & .newsletters__input button {
+    width: 85px;
+    height: 40px;
+    flex-shrink: 0;
+    border-radius: 0px 6px 6px 0px;
+    background: $color_green;
+    border: none;
+    color: $color_white;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 16px;
+    cursor: pointer;
+  }
+
+  & .newsletters__input input {
+    width: 269px;
+    height: 40px;
+    flex-shrink: 0;
+    border-radius: 6px 0 0px 6px;
+    background: $color_white;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.06);
+    border: none;
+    padding: 12px 0 12px 11px;
+  }
+
+  & .newsletters__input input:focus {
+    outline: none;
+    border: 1px solid $color_green;
+  }
+
+  & input::placeholder {
+    color: $color_gray_2;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+  }
+
+  & input::-ms-input-placeholder {
+    color: $color_gray_2;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+  }
+
+  & .footer__text {
+    color: $color_gray;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 22px;
+  }
+
+  & .footer__plants {
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  & .footer__plants .footer__text {
+    margin-top: 9px;
+    max-width: 204px;
+  }
+
+  & .plants-one,
+  .plants-three,
+  .plants-two {
+    position: relative;
+  }
+
+  & .plants-one {
+    background: url("/footer/green-elipse.svg") 0 10px no-repeat,
+      url("/footer/pot.svg") 17px 35px no-repeat;
+  }
+
+  & .plants-two {
+    background: url("/footer/green-elipse.svg") 0 10px no-repeat,
+      url("/footer/pot2.svg") 12px 35px no-repeat;
+  }
+
+  & .plants-three {
+    background: url("/footer/green-elipse.svg") 0 10px no-repeat,
+      url("/footer/pot3.svg") 5% 45px no-repeat;
+  }
+
+  & .plants-one img {
+    position: absolute;
+    top: -10px;
+    left: 15px;
+  }
+
+  & .plants-two img {
+    position: absolute;
+    top: -10px;
+    left: 15px;
+  }
+
+  & .plants-three img {
+    position: absolute;
+    top: 2px;
+    left: 22px;
+  }
 }
