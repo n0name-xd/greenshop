@@ -257,6 +257,14 @@ export const Footer = () => {
             </Link>
           </div>
           <h4 className="social-accept">We accept</h4>
+          <div className="social-accept-list">
+            {/* <Image
+              alt="accept"
+              src="/footer/accept.jpg"
+              width={224}
+              height={26}
+            /> */}
+          </div>
         </div>
       </div>
       <div className="coppyright">© 2021 GreenShop. All Rights Reserved.</div>

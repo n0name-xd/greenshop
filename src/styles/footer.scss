@@ -243,4 +243,12 @@ footer {
   & .social-accept {
     margin-top: 33px;
   }
+
+  & .social-accept-list {
+    margin-top: 13px;
+    height: 26px;
+    width: 224px;
+    background: url("/footer/accept.jpg"), lightgray 50% / cover no-repeat;
+    mix-blend-mode: multiply;
+  }
 }
