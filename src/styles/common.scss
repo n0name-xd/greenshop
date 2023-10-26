@@ -20,3 +20,21 @@
   display: block;
   width: max-content;
 }
+
+.bread-crumbs {
+  display: flex;
+  align-items: center;
+}
+
+.bread-crumbs a {
+  text-decoration: none;
+  color: $color_black;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 16px;
+}
+
+.bread-crumbs span {
+  font-size: 12px;
+  margin: 0 5px;
+}
