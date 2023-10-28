@@ -120,12 +120,16 @@ export const ShopItem = (): JSX.Element => {
             </div>
           </div>
           <div className="control-panele-list">
-            <button>-</button>
-            <span>1</span>
-            <button>+</button>
-            <button>Buy NOW</button>
-            <button>Add to cart</button>
-            <button>
+            <button className="control-panele__count">-</button>
+            <span className="control-panele__count-item">1</span>
+            <button className="control-panele__count">+</button>
+            <button className="control-panele__btn control-panele__btn_green">
+              Buy NOW
+            </button>
+            <button className="control-panele__btn control-panele__btn_white">
+              Add to cart
+            </button>
+            <button className="control-panele__btn control-panele__btn_white_min">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="20"
