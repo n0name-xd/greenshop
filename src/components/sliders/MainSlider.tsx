@@ -4,6 +4,12 @@ import Slider from "react-slick";
 import Image from "next/image";
 import Link from "next/link";
 
+const sliderListData = [
+  "/slider/one.webp",
+  "/slider/three.webp",
+  "/slider/one.webp",
+];
+
 export const MainSlider = (): JSX.Element => {
   const settings = {
     dots: true,
@@ -14,12 +20,6 @@ export const MainSlider = (): JSX.Element => {
     autoplaySpeed: 4000,
     appendDots: (dots: any) => <ul className="test">{dots}</ul>,
   };
-
-  const sliderListData = [
-    "/slider/one.webp",
-    "/slider/three.webp",
-    "/slider/one.webp",
-  ];
 
   const sliderList = sliderListData.map((el: string): JSX.Element => {
     return (

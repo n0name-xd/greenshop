@@ -1,4 +1,6 @@
+import { ProductDescription } from "@/src/components/Shop/ProductDescription";
 import { ShopItem } from "@/src/components/Shop/ShopItem";
+import { ShopSlider } from "@/src/components/Shop/ShopSlider";
 import { BreadCrumbs } from "@/src/components/common/BreadCrambs";
 
 const BreadCrumbsData = [
@@ -13,6 +15,8 @@ const Shop = () => {
     <div className="shop">
       <BreadCrumbs links={BreadCrumbsData} />
       <ShopItem />
+      <ProductDescription />
+      <ShopSlider />
     </div>
   );
 };
