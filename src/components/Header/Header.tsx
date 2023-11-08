@@ -12,7 +12,7 @@ export const Header = (): JSX.Element => {
             src="Logo.svg"
             alt="logo"
             width={150}
-            height={34.3}
+            height={35}
             priority={true}
           />
         </Link>

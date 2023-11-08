@@ -45,7 +45,10 @@ export const Footer = () => {
         </div>
       </div>
       <div className="footer__middle">
-        <Image alt="logo" src="Logo.svg" width={150} height={34.3} />
+        <div>
+          <Image alt="logo" src="Logo.svg" width={150} height={35} />
+        </div>
+
         <div className="footer__middle-block-one">
           <svg
             xmlns="http://www.w3.org/2000/svg"

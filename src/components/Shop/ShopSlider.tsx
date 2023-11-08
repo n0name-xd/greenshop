@@ -109,8 +109,8 @@ export const ShopSlider = (): JSX.Element => {
     slidesToShow: 5,
     slidesToScroll: 5,
     autoplay: true,
-    autoplaySpeed: 2000,
-    appendDots: (dots: any) => <ul className="">{dots}</ul>,
+    autoplaySpeed: 5000,
+    appendDots: (dots: any) => <ul>{dots}</ul>,
   };
 
   const sliderList = sliderListData.map(

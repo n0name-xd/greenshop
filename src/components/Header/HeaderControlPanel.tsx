@@ -1,6 +1,10 @@
+"use client";
 import Image from "next/image";
+import { useState } from "react";
+import { LoginModal } from "./LoginModal";
 
 export const HeaderControlPanel = (): JSX.Element => {
+  const [loginModal, setLoginModal] = useState<boolean>(false);
   return (
     <div className="control-panele">
       <button className="control-panele__search noselect">
@@ -22,7 +26,13 @@ export const HeaderControlPanel = (): JSX.Element => {
         />
         <span className="basket-count noselect">6</span>
       </button>
-      <button className="control-panele__login noselect">Login</button>
+      <button
+        onClick={() => setLoginModal(true)}
+        className="control-panele__login noselect"
+      >
+        Login
+      </button>
+      {loginModal ? <LoginModal close={setLoginModal} /> : null}
     </div>
   );
 };

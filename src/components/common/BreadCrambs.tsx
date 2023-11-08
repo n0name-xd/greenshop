@@ -9,7 +9,7 @@ export const BreadCrumbs: React.FC<IBreadCrumbsProps> = ({
 }): JSX.Element => {
   const linksList = links.map((el) => {
     return (
-      <>
+      <span key={el.title}>
         <span>/</span>{" "}
         <Link
           key={el.title}
@@ -20,7 +20,7 @@ export const BreadCrumbs: React.FC<IBreadCrumbsProps> = ({
         >
           {el.title}
         </Link>
-      </>
+      </span>
     );
   });
 
