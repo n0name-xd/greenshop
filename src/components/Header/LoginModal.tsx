@@ -1,6 +1,7 @@
 "use client";
 
 import { Dispatch, SetStateAction, useState } from "react";
+import Image from "next/image";
 
 export interface ILoginModalProps {
   close: Dispatch<SetStateAction<boolean>>;
@@ -10,6 +11,9 @@ export const LoginModal: React.FC<ILoginModalProps> = ({
   close,
 }: ILoginModalProps): JSX.Element => {
   const [tab, setTab] = useState<string>("login");
+  const [password, setPassword] = useState<string>("");
+  const [showPassword, setShowPassword] = useState<boolean>(false);
+  const [confirmPassword, setConfirmPassword] = useState<string>("");
 
   return (
     <div className="login-modal">
@@ -46,12 +50,86 @@ export const LoginModal: React.FC<ILoginModalProps> = ({
           </div>
         </div>
         <div className="login-modal__description">
-          Enter your username and password to login.
+          {tab === "login"
+            ? "Enter your username and password to login."
+            : "Enter your email and password to register."}
         </div>
         <form action="">
           <input type="text" placeholder="Username" />
-          <input type="text" placeholder="Password" />
+          {tab !== "login" ? (
+            <input type="text" placeholder="Enter your email address" />
+          ) : null}
+          <div className="password-block">
+            <input
+              type={showPassword ? "next" : "password"}
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              style={{
+                letterSpacing: password.length && !showPassword ? "3px" : "0px",
+              }}
+            />
+            <Image
+              onClick={() => setShowPassword(!showPassword)}
+              className="show-password"
+              src="/icons/eye.svg"
+              alt="show password"
+              width={20}
+              height={20}
+              style={{ opacity: showPassword ? 1 : 0.5 }}
+            />
+          </div>
+          {tab !== "login" ? (
+            <input
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              type={showPassword ? "next" : "password"}
+              placeholder="Confirm Password"
+              style={{
+                letterSpacing:
+                  confirmPassword.length && !showPassword ? "3px" : "0px",
+              }}
+            />
+          ) : null}
+          {tab === "login" ? (
+            <div className="forgot-password">Forgot Password?</div>
+          ) : null}
+
+          <button type="button" className="login-submit">
+            {tab === "login" ? "Login" : "Register"}
+          </button>
         </form>
+        <div className="login-with">
+          <div className="login-with__border"></div>
+          <div>{tab === "login" ? "Or login with" : "Or register with"}</div>
+          <div className="login-with__border"></div>
+        </div>
+        <div className="login-with__items">
+          <button>
+            <Image
+              alt="google"
+              src="/icons/google.svg"
+              width={20}
+              height={20}
+            />
+            <span>
+              {tab === "login" ? "Login with Google" : "Continue with Google"}
+            </span>
+          </button>
+          <button>
+            <Image
+              alt="google"
+              src="/icons/face-book.svg"
+              width={20}
+              height={20}
+            />
+            <span>
+              {tab === "login"
+                ? "Login with Facebook"
+                : "Continue with Facebook"}
+            </span>
+          </button>
+        </div>
       </div>
     </div>
   );

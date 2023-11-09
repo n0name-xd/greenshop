@@ -133,13 +133,13 @@ header {
 
 .login-modal__container {
   width: 500px;
-  height: 600px;
-  max-height: 600px;
+  height: auto;
   top: 100px;
   left: calc(50% - 500px / 2);
   background: white;
   position: fixed;
   padding: 50px 100px 0px 100px;
+  border-bottom: 10px solid $color_green;
 }
 
 .login-modal__close {
@@ -188,6 +188,7 @@ header {
 }
 
 .login-modal form {
+  position: relative;
   width: 100%;
   margin-top: 14px;
   display: flex;
@@ -199,4 +200,108 @@ header {
   border-radius: 5px;
   border: 1px solid #eaeaea;
   height: 40px;
+}
+
+.login-modal input {
+  padding: 12px 14px;
+  color: $color_gray2;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+}
+
+.login-modal input[type="password"] {
+  -webkit-text-security: disc;
+  color: $color_black;
+}
+
+.login-modal input:focus {
+  outline: none;
+  border: 1px solid $color_green;
+}
+
+.show-password {
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  left: 267px;
+}
+
+.forgot-password {
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  color: $color_green;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+}
+
+.login-submit {
+  margin-top: 10px;
+  cursor: pointer;
+  color: $color_white;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 16px;
+  border-radius: 5px;
+  background: $color_green;
+  width: 100%;
+  height: 45px;
+  border: none;
+}
+
+.login-with {
+  width: 100%;
+  margin-top: 46px;
+  color: $color_black;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+
+  & .login-with__border {
+    width: 100%;
+    height: 1px;
+    background: #eaeaea;
+  }
+}
+
+.login-with__items {
+  padding: 27px 0 58px 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.login-with__items button {
+  cursor: pointer;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid #eaeaea;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: $color_gray;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 16px;
+}
+
+.password-block {
+  width: 100%;
+  position: relative;
+}
+
+.password-block input {
+  width: 100%;
 }
