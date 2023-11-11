@@ -41,11 +41,13 @@
 
 .custom-input {
   position: relative;
+  width: 100%;
 }
 
 .custom-input__error {
   position: absolute;
   top: 40px;
+  left: 0;
   font-size: 11px;
   color: red;
 }

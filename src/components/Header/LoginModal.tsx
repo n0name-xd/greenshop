@@ -17,13 +17,16 @@ export const LoginModal: React.FC<ILoginModalProps> = ({
   const [password, setPassword] = useState<string>("");
   const [showPassword, setShowPassword] = useState<boolean>(false);
   const [confirmPassword, setConfirmPassword] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
 
   const [userNameError, setUserNameError] = useState<string>("");
   const [passwordError, setPasswordError] = useState<string>("");
+  const [emailError, setEmailError] = useState<string>("");
 
   const handleSubmit = async (): Promise<void> => {
     setUserNameError("");
     setPasswordError("");
+    setEmailError("");
 
     if (tab === "login") {
       if (userName.length < 4) {
@@ -43,6 +46,34 @@ export const LoginModal: React.FC<ILoginModalProps> = ({
 
       await loginApi(loginData);
     } else {
+      if (userName.length < 4) {
+        setUserNameError("The login must contain at least 4 characters");
+        return;
+      }
+
+      const validRegex = /\S+@\S+\.\S+/;
+
+      if (!email.match(validRegex)) {
+        setEmailError("Incorrect email");
+        return;
+      }
+
+      if (password.length < 4) {
+        setPasswordError("The password must contain at least 4 characters");
+        return;
+      }
+
+      if (password !== confirmPassword) {
+        setPasswordError("Password confirmation does not match");
+        return;
+      }
+
+      const registerData = {
+        userName,
+        email,
+        password,
+        confirmPassword,
+      };
     }
   };
 
@@ -88,7 +119,15 @@ export const LoginModal: React.FC<ILoginModalProps> = ({
             error={userNameError}
           />
           {tab !== "login" ? (
-            <input type="text" placeholder="Enter your email address" />
+            <div style={{ position: "relative", width: "100%" }}>
+              <CustomInput
+                onChange={setEmail}
+                value={email}
+                type="text"
+                placeholder="Enter your email address"
+                error={emailError}
+              />
+            </div>
           ) : null}
           <div className="password-block">
             <CustomInput
@@ -99,7 +138,6 @@ export const LoginModal: React.FC<ILoginModalProps> = ({
               error={passwordError}
               style={{
                 letterSpacing: password.length && !showPassword ? "3px" : "0px",
-                position: "absolute",
               }}
             />
             <Image
@@ -113,11 +151,12 @@ export const LoginModal: React.FC<ILoginModalProps> = ({
             />
           </div>
           {tab !== "login" ? (
-            <input
+            <CustomInput
+              onChange={setConfirmPassword}
               value={confirmPassword}
-              onChange={(e) => setConfirmPassword(e.target.value)}
               type={showPassword ? "next" : "password"}
               placeholder="Confirm Password"
+              error={passwordError}
               style={{
                 letterSpacing:
                   confirmPassword.length && !showPassword ? "3px" : "0px",
