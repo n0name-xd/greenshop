@@ -1,8 +1,8 @@
 "use client";
 
-import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 import Image from "next/image";
-import { loginApi } from "@/src/utils/publickApi";
+import { loginApi, registrationApi } from "@/src/utils/publickApi";
 import { CustomInput } from "../common/CustomInput";
 
 export interface ILoginModalProps {
@@ -28,38 +28,28 @@ export const LoginModal: React.FC<ILoginModalProps> = ({
     setPasswordError("");
     setEmailError("");
 
+    if (userName.length < 4) {
+      setUserNameError("The login must contain at least 4 characters");
+      return;
+    }
+
+    if (password.length < 4) {
+      setPasswordError("The password must contain at least 4 characters");
+      return;
+    }
+
+    const authData = {
+      userName,
+      password,
+    };
+
     if (tab === "login") {
-      if (userName.length < 4) {
-        setUserNameError("The login must contain at least 4 characters");
-        return;
-      }
-
-      if (password.length < 4) {
-        setPasswordError("The password must contain at least 4 characters");
-        return;
-      }
-
-      const loginData = {
-        userName,
-        password,
-      };
-
-      await loginApi(loginData);
+      await loginApi(authData);
     } else {
-      if (userName.length < 4) {
-        setUserNameError("The login must contain at least 4 characters");
-        return;
-      }
-
       const validRegex = /\S+@\S+\.\S+/;
 
       if (!email.match(validRegex)) {
         setEmailError("Incorrect email");
-        return;
-      }
-
-      if (password.length < 4) {
-        setPasswordError("The password must contain at least 4 characters");
         return;
       }
 
@@ -68,16 +58,9 @@ export const LoginModal: React.FC<ILoginModalProps> = ({
         return;
       }
 
-      const registerData = {
-        userName,
-        email,
-        password,
-        confirmPassword,
-      };
+      await registrationApi({ ...authData, email, confirmPassword });
     }
   };
-
-  useEffect(() => {}, []);
 
   return (
     <div className="login-modal">
@@ -151,17 +134,19 @@ export const LoginModal: React.FC<ILoginModalProps> = ({
             />
           </div>
           {tab !== "login" ? (
-            <CustomInput
-              onChange={setConfirmPassword}
-              value={confirmPassword}
-              type={showPassword ? "next" : "password"}
-              placeholder="Confirm Password"
-              error={passwordError}
-              style={{
-                letterSpacing:
-                  confirmPassword.length && !showPassword ? "3px" : "0px",
-              }}
-            />
+            <div style={{ position: "relative", width: "100%" }}>
+              <CustomInput
+                onChange={setConfirmPassword}
+                value={confirmPassword}
+                type={showPassword ? "next" : "password"}
+                placeholder="Confirm Password"
+                error={passwordError}
+                style={{
+                  letterSpacing:
+                    confirmPassword.length && !showPassword ? "3px" : "0px",
+                }}
+              />
+            </div>
           ) : null}
           {tab === "login" ? (
             <div className="forgot-password">Forgot Password?</div>

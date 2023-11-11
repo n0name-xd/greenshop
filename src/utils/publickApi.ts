@@ -17,3 +17,22 @@ export const loginApi = async ({
 
   return response;
 };
+
+interface IRegistrationApi {
+  userName: string;
+  email: string;
+  password: string;
+  confirmPassword: string;
+}
+
+export const registrationApi = async (data: IRegistrationApi) => {
+  const formData = new FormData();
+
+  Object.entries(data).forEach((el) => {
+    formData.append(el[0], el[1]);
+  });
+
+  const response = await axios.post("/api/auth/register", formData);
+
+  return response;
+};
