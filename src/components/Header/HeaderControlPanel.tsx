@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { LoginModal } from "./LoginModal";
+import Link from "next/link";
 
 export const HeaderControlPanel = (): JSX.Element => {
   const [loginModal, setLoginModal] = useState<boolean>(false);
@@ -16,16 +17,19 @@ export const HeaderControlPanel = (): JSX.Element => {
           priority
         />
       </button>
-      <button className="control-panele__basket noselect">
-        <Image
-          src="/icons/basket-icon.svg"
-          alt="search"
-          width={24}
-          height={24}
-          priority
-        />
-        <span className="basket-count noselect">6</span>
-      </button>
+      <Link href="/shopping-cart">
+        <button className="control-panele__basket noselect">
+          <Image
+            src="/icons/basket-icon.svg"
+            alt="search"
+            width={24}
+            height={24}
+            priority
+          />
+          <span className="basket-count noselect">6</span>
+        </button>
+      </Link>
+
       <button
         onClick={() => setLoginModal(true)}
         className="control-panele__login noselect"
