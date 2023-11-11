@@ -13,7 +13,11 @@ export const loginApi = async ({
   formData.append("userName", userName);
   formData.append("password", password);
 
-  const response = await axios.post("/api/auth/login", formData);
+  const response = await axios
+    .post("/api/auth/login", formData)
+    .catch((err) => {
+      throw err;
+    });
 
   return response;
 };
@@ -22,7 +26,6 @@ interface IRegistrationApi {
   userName: string;
   email: string;
   password: string;
-  confirmPassword: string;
 }
 
 export const registrationApi = async (data: IRegistrationApi) => {

@@ -1,18 +1,32 @@
+import axios from "axios";
+
 export async function POST(request: Request) {
   const formData = await request.formData();
   const userName = formData.get("userName");
   const password = formData.get("password");
-  console.log("userName", userName);
-  console.log("password", password);
-  //   const res = await fetch("https://data.mongodb-api.com/...", {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //       "API-Key": process.env.DATA_API_KEY,
-  //     },
-  //     body: JSON.stringify({ time: new Date().toISOString() }),
-  //   });
-  //   const data = await res.json();
-  //   return Response.json(data);
-  return Response.json({ message: "Ok" });
+
+  const loginData = {
+    userName,
+    password,
+    clientSecret: process.env.CLIENT_SECRET,
+  };
+
+  try {
+    await axios.post(`${process.env.NEXT_PUBLIC_SERVER}/auth/login`, loginData);
+
+    return Response.json({ message: "Ok" });
+  } catch (error: any) {
+    if (error.response && error.response.status) {
+      if (error.response.status === 403) {
+        return Response.json({ message: "Invalid request" }, { status: 403 });
+      }
+
+      return Response.json(
+        { message: error.response.data.message },
+        { status: error.response.status }
+      );
+    }
+
+    return Response.json({ message: "Something went wrong" }, { status: 500 });
+  }
 }
