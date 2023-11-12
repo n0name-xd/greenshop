@@ -22,7 +22,6 @@ export const LoginModal: React.FC<ILoginModalProps> = ({
   const [userNameError, setUserNameError] = useState<string>("");
   const [passwordError, setPasswordError] = useState<string>("");
   const [emailError, setEmailError] = useState<string>("");
-  const [isDisabled, setIsDisabled] = useState<boolean>(false);
 
   const handleSubmit = async (): Promise<void> => {
     setUserNameError("");
@@ -45,12 +44,9 @@ export const LoginModal: React.FC<ILoginModalProps> = ({
     };
 
     if (tab === "login") {
-      setIsDisabled(true);
-
       await loginApi(authData)
         .then(() => close(false))
         .catch((err) => {
-          setIsDisabled(false);
           if (err.response.status === 403) {
             console.log("Access denied");
           }
@@ -168,7 +164,6 @@ export const LoginModal: React.FC<ILoginModalProps> = ({
             onClick={handleSubmit}
             type="button"
             className="login-submit"
-            disabled={isDisabled}
           >
             {tab === "login" ? "Login" : "Register"}
           </button>

@@ -13,11 +13,17 @@ export async function POST(request: Request) {
     clientSecret: process.env.CLIENT_SECRET,
   };
 
-  const response = await axios.post(
-    `${process.env.NEXT_PUBLIC_SERVER}/auth/registration`,
-    registrationData
-  );
+  try {
+    const response = await axios.post(
+      `${process.env.NEXT_PUBLIC_SERVER}/auth/registration`,
+      registrationData
+    );
 
-  console.log("response", response);
-  return Response.json({ message: "Ok" });
+    console.log("response", response);
+
+    return Response.json({ message: "Ok" });
+  } catch (error) {
+    console.log("error", error);
+    return Response.json({ message: "Somesing went wrong" });
+  }
 }
