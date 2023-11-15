@@ -1,5 +1,23 @@
 @import "./variables.scss";
 
+// scroll bar
+
+body {
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: #edf6ec;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $color_green;
+    border-radius: 10px;
+  }
+}
+
+//
 .noselect {
   -webkit-touch-callout: none;
   -webkit-user-select: none;

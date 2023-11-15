@@ -1,3 +1,4 @@
+import { CartProducts } from "@/src/components/CartProducts/CartProducts";
 import { BreadCrumbs } from "@/src/components/common/BreadCrambs";
 
 const BreadCrumbsData = [
@@ -15,7 +16,7 @@ const ShoppingCart = (): JSX.Element => {
   return (
     <div className="shopping-cart">
       <BreadCrumbs links={BreadCrumbsData} />
-      shopping-cart
+      <CartProducts />
     </div>
   );
 };
