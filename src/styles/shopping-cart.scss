@@ -31,6 +31,7 @@
   .products-list__table {
     display: flex;
     align-items: flex-start;
+    height: 18px;
   }
 
   .cart-products__line {
@@ -131,5 +132,103 @@
 
   .col-4 {
     width: 100%;
+  }
+
+  h5 {
+    color: $color_black;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 16px;
+  }
+
+  .coupon {
+    margin-top: 11px;
+  }
+
+  .coupon__block {
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    gap: 0;
+    padding-bottom: 15px;
+  }
+
+  .coupon__block input {
+    flex-grow: 1;
+    padding: 13px 0 12px 9px;
+    height: 40px;
+    flex-shrink: 0;
+    border-radius: 3px 0px 0px 3px;
+    border: 1px solid $color_white;
+    outline: none;
+    border: 1px solid $color_green;
+    box-sizing: border-box;
+  }
+
+  .coupon__block input::placeholder {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 15px;
+  }
+
+  .coupon__block button {
+    box-sizing: border-box;
+    width: 102px;
+    height: 40px;
+    flex-shrink: 0;
+    border-radius: 0px 3px 3px 0px;
+    background: $color_green;
+    border: none;
+    color: $color_white;
+    cursor: pointer;
+  }
+
+  .total__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 15px;
+  }
+
+  .total__row span {
+    color: $color_black;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 16px;
+  }
+
+  .total__link {
+    margin-top: 8px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .total__link a {
+    color: $color_green;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    text-decoration: none;
+  }
+
+  .total__main-link {
+    color: $color_green;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 16px;
+    text-decoration: none;
+  }
+
+  .total__button {
+    display: block;
+    margin: 29px 0 14px 0;
+    width: 100%;
+    border-radius: 3px;
+    background: $color_green;
+    height: 40px;
+    color: $color_white;
+    border: none;
+    cursor: pointer;
   }
 }

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { CartProductItem } from "./CartProductItem";
 
 const productsData = [
@@ -60,6 +61,37 @@ export const CartProducts = (): JSX.Element => {
       <div className="total-cart">
         <h3>Cart Totals</h3>
         <div className="cart-products__line" />
+        <h5 className="coupon">Coupon Apply</h5>
+        <div className="coupon__block">
+          <input type="text" placeholder="Enter coupon code here..." />
+          <button>Apply</button>
+        </div>
+        <div className="total__row">
+          <h5>Subtotal</h5>
+          <span>$2,683.00</span>
+        </div>
+        <div className="total__row">
+          <h5>Coupon Discount</h5>
+          <span style={{ fontSize: "15px" }}>(-) 00.00</span>
+        </div>
+        <div className="total__row">
+          <h5>Shiping</h5>
+          <span>$16.00</span>
+        </div>
+        <div className="total__link">
+          <Link href="#">View shipping charge</Link>
+        </div>
+
+        <div style={{ marginTop: "26px" }} className="total__row">
+          <h5 style={{ color: "#3D3D3D", fontSize: "16px" }}>Total</h5>
+          <span style={{ color: "#46A358", fontSize: "18px", fontWeight: 700 }}>
+            $2,699.00
+          </span>
+        </div>
+        <button className="total__button">Proceed To Checkout</button>
+        <Link className="total__main-link" href="#">
+          Continue Shopping
+        </Link>
       </div>
     </div>
   );
