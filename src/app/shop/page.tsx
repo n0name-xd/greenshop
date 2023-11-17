@@ -16,7 +16,7 @@ const Shop = () => {
       <BreadCrumbs links={BreadCrumbsData} />
       <ShopItem />
       <ProductDescription />
-      <ShopSlider />
+      <ShopSlider title="Releted Products" />
     </div>
   );
 };

@@ -102,7 +102,13 @@ export interface ISLiderShopItem {
   price: string;
 }
 
-export const ShopSlider = (): JSX.Element => {
+export interface IShopSliderProps {
+  title: string;
+}
+
+export const ShopSlider: React.FC<IShopSliderProps> = ({
+  title,
+}: IShopSliderProps): JSX.Element => {
   const settings = {
     dots: true,
     infinite: true,
@@ -137,7 +143,7 @@ export const ShopSlider = (): JSX.Element => {
 
   return (
     <div className="shop-slider">
-      <div className="shop-slider__title">Releted Products</div>
+      <div className="shop-slider__title">{title}</div>
       <Slider {...settings}>{sliderList}</Slider>
     </div>
   );
