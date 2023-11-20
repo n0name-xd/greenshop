@@ -22,8 +22,10 @@ export async function POST(request: Request) {
     console.log("response", response);
 
     return Response.json({ message: "Ok" });
-  } catch (error) {
-    console.log("error", error);
-    return Response.json({ message: "Somesing went wrong" });
+  } catch (error: any) {
+    return Response.json(
+      { message: error.response.data.message },
+      { status: error.response.data.statusCode }
+    );
   }
 }

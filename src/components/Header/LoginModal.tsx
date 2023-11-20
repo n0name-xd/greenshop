@@ -65,7 +65,13 @@ export const LoginModal: React.FC<ILoginModalProps> = ({
         return;
       }
 
-      await registrationApi({ ...authData, email });
+      await registrationApi({ ...authData, email })
+        .then(() => console.log("succses registration"))
+        .catch((err) => {
+          if (err.response.status === 403) {
+            setEmailError(err.response.data.message);
+          }
+        });
     }
   };
 
