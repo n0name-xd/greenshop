@@ -79,7 +79,7 @@ export const MainSideMenu = (): JSX.Element => {
   return (
     <div className="main-content__side-menu">
       <div className="side-menu__control-panel">
-        <div className="side-menu__categories">
+        <div>
           <h3>Categories</h3>
           <ul>{categoryList}</ul>
         </div>

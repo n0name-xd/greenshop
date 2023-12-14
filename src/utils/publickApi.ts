@@ -37,10 +37,8 @@ export const registrationApi = async (data: IRegistrationApi) => {
 
   try {
     const response = await axios.post("/api/auth/register", formData);
-
     return response;
   } catch (err) {
-    // console.log("1111", err);
     throw err;
   }
 };

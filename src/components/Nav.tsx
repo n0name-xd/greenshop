@@ -54,6 +54,21 @@ export const Nav = (): JSX.Element => {
             ></span>
           </Link>
         </li>
+        <li>
+          <Link
+            className={`${
+              pathname === "/admin-panel" ? "active" : ""
+            } noselect`}
+            href="/admin-panel"
+          >
+            Admin Panel
+            <span
+              className={`link_border ${
+                pathname === "/admin-panel" ? "active" : ""
+              }`}
+            ></span>
+          </Link>
+        </li>
       </ul>
     </nav>
   );

@@ -14,12 +14,10 @@ export async function POST(request: Request) {
   };
 
   try {
-    const response = await axios.post(
+    await axios.post(
       `${process.env.NEXT_PUBLIC_SERVER}/auth/registration`,
       registrationData
     );
-
-    console.log("response", response);
 
     return Response.json({ message: "Ok" });
   } catch (error: any) {

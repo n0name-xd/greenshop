@@ -4,13 +4,26 @@ import Slider from "react-slick";
 import Image from "next/image";
 import Link from "next/link";
 
-const sliderListData = [
-  "/slider/one.webp",
-  "/slider/three.webp",
-  "/slider/one.webp",
-];
+interface IMainSliderProps {
+  slides: Array<string>;
+}
 
-export const MainSlider = (): JSX.Element => {
+interface IDot {
+  $$typeof: Symbol;
+  type: string;
+  key: string;
+  ref: null;
+  props: {
+    className: string;
+    children: unknown;
+  };
+  _owner: null;
+  _store: {};
+}
+
+export const MainSlider: React.FC<IMainSliderProps> = ({
+  slides,
+}: IMainSliderProps): JSX.Element => {
   const settings = {
     dots: true,
     infinite: true,
@@ -18,10 +31,10 @@ export const MainSlider = (): JSX.Element => {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 4000,
-    appendDots: (dots: any) => <ul className="test">{dots}</ul>,
+    appendDots: (dots: IDot) => <ul>{dots}</ul>,
   };
 
-  const sliderList = sliderListData.map((el: string): JSX.Element => {
+  const sliderList = slides.map((el: string): JSX.Element => {
     return (
       <div key={el} className="slider-item">
         <Image

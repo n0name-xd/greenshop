@@ -1,0 +1,31 @@
+@import "./variables.scss";
+
+.admin-panel {
+  display: flex;
+  gap: 50px;
+  margin-top: 12px;
+}
+
+.admin-panel__side-menu {
+  padding: 14px 24px 19px 18px;
+  width: 300px;
+  background: $color_white_gray;
+}
+
+.admin-panel__side-menu h3 {
+  color: $color_black;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 16px;
+}
+
+.admin-panel__side-menu ul {
+  padding: 10px 0 0 10px;
+  font-size: 15px;
+}
+
+.admin-panel__content {
+  background: $color_white_gray;
+  width: 100%;
+  padding: 14px 24px 19px 18px;
+}
