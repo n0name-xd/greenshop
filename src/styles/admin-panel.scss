@@ -29,3 +29,43 @@
   width: 100%;
   padding: 14px 24px 19px 18px;
 }
+
+.admin-panel__side-menu ul {
+  margin-top: 10px;
+
+  & li {
+    cursor: pointer;
+    padding: 10px 0 10px 10px;
+  }
+
+  & .active {
+    color: $color_green;
+  }
+}
+
+.admin-panel__button {
+  color: $color_white;
+  background: $color_green;
+  padding: 7px 17px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.input_img {
+  display: flex;
+  width: 100%;
+  gap: 30px;
+  justify-content: space-between;
+}
+
+.input_img h4 {
+  margin-bottom: 20px;
+}
+
+.admin__banner-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
