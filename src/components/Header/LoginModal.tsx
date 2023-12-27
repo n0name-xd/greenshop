@@ -2,7 +2,7 @@
 
 import { Dispatch, SetStateAction, useState } from "react";
 import Image from "next/image";
-import { loginApi, registrationApi } from "@/src/utils/publickApi";
+import { loginApi, registrationApi } from "@/src/utils/publicApi";
 import { CustomInput } from "../common/CustomInput";
 
 export interface ILoginModalProps {
