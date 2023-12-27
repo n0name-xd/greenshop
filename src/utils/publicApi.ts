@@ -14,7 +14,7 @@ export const loginApi = async ({
   formData.append("password", password);
 
   const response = await axios
-    .post<FormData, any>("/api/auth/login", formData)
+    .post("/api/auth/login", formData)
     .catch((err) => {
       throw err;
     });
@@ -36,10 +36,7 @@ export const registrationApi = async (
   });
 
   try {
-    const response = await axios.post<FormData, any>(
-      "/api/auth/register",
-      formData
-    );
+    const response = await axios.post("/api/auth/register", formData);
     return response;
   } catch (err) {
     throw err;
