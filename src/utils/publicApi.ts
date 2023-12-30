@@ -51,6 +51,9 @@ export const setBannersApi = async (
 
     return response;
   } catch (err) {
+    if (axios.isAxiosError(err)) {
+      console.log("error message: ", err.message);
+    }
     throw err;
   }
 };
