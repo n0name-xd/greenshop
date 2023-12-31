@@ -1,16 +1,25 @@
 import axios from "axios";
 import { NextResponse } from "next/server";
-import fs from "fs";
 
 export async function POST(req: Request, res: Response) {
   try {
     const formData = await req.formData();
     const bannerOne = formData.get("bannerOne");
+    const bannerTwo = formData.get("bannerTwo");
+    const bannerThree = formData.get("bannerThree");
 
     const sendFormData = new FormData();
 
     if (bannerOne) {
-      sendFormData.append("files", bannerOne);
+      sendFormData.append("bannerOne", bannerOne);
+    }
+
+    if (bannerTwo) {
+      sendFormData.append("bannerTwo", bannerTwo);
+    }
+
+    if (bannerThree) {
+      sendFormData.append("bannerThree", bannerThree);
     }
 
     await axios.post(
@@ -21,7 +30,7 @@ export async function POST(req: Request, res: Response) {
       }
     );
 
-    return NextResponse.json({ data: "hi" });
+    return NextResponse.json({ message: "Files upload success" });
   } catch (error) {
     if (axios.isAxiosError(error)) {
       console.log(error?.message);
